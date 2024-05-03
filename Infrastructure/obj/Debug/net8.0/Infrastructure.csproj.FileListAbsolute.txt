@@ -37,3 +37,4 @@ C:\Users\annap\OneDrive\Документы\texn\hope-main\Infrastructure\obj\Deb
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+C:\Users\annap\OneDrive\Документы\texn\hope-main\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json

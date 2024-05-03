@@ -12,6 +12,20 @@ namespace Infrastructure.Configuration
             builder.HasKey(u => u.Id);
             builder.HasIndex(u => u.Id).IsUnique();
 
+            builder.Property(u => u.Email)
+            .IsRequired()
+            .HasMaxLength(100);
+
+            builder.Property(u => u.FullName)
+               .IsRequired()
+               .HasMaxLength(100);
+
+            builder.Property(u => u.Salt)
+                .IsRequired();
+
+            builder.Property(u => u.PasswordHash)
+                    .IsRequired();
+
             builder.Property(u => u.Address)
                 .IsRequired()//обязательно к заполнению
                 .HasMaxLength(100);

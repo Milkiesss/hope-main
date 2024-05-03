@@ -132,9 +132,6 @@ C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\A
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\Castle.Core.dll
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\Humanizer.dll
-C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -147,9 +144,6 @@ C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\M
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
-C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
-C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\Mono.TextTemplating.dll
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\Npgsql.dll
@@ -243,3 +237,5 @@ C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\obj\Debug\net8.0\r
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\obj\Debug\net8.0\Api.pdb
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\obj\Debug\net8.0\Api.genruntimeconfig.cache
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\obj\Debug\net8.0\ref\Api.dll
+C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\obj\Debug\net8.0\Api.sourcelink.json

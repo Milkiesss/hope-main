@@ -51,6 +51,12 @@ namespace Api.Helpers
             service.AddScoped<ICategoryRepository, CategoryRepository>();
             service.AddScoped<ICategoryService, CategoryService>();
 
+            service.AddScoped<IUserRepository, UserRepository>();
+            service.AddScoped<IUserService, UserService>();
+
+            service.AddScoped<IOrderRepository, OrderRepository>();
+            service.AddScoped<IOrderService, OrderService>();
+
             return service;
         }
         private static IServiceCollection AddSwagger(this IServiceCollection services)

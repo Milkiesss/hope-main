@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Domain.Models;
 using Infrastructure.Configuration;
 
@@ -11,6 +10,7 @@ namespace Infrastructure
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
         public DbSet<Order> orders { get; set; }
+        public DbSet<User> users { get; set; }
         public DbSet<Category> categories { get; set; }
         public DbSet<ItemOrder> itemOrders { get; set; }
         public DbSet<Product> products { get; set; }

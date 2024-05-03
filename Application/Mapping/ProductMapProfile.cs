@@ -57,7 +57,7 @@ namespace Application.Mapping
                 }));
 
             CreateMap<ProductCreateRequest, Product>()
-                .ConstructUsing((dto, context) => new Product
+                .ConstructUsing(dto => new Product
                 (
                     Guid.NewGuid(),
                     dto.Name,

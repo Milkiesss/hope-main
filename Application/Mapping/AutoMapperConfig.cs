@@ -16,6 +16,8 @@ namespace Application.Mapping
                 cfg.AddProfile<SupplierMapProfile>();
                 cfg.AddProfile<CategoryMapProfile>();
                 cfg.AddProfile<ProductMapProfile>();
+                cfg.AddProfile<UserMapProfile>();
+                cfg.AddProfile<OrderMapProfile>();
             });
             return config;
         }

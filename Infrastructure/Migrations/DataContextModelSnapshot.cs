@@ -74,7 +74,7 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("DateOrder")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateTime(2024, 4, 29, 23, 42, 59, 303, DateTimeKind.Local).AddTicks(4072));
+                        .HasDefaultValue(new DateTime(2024, 4, 30, 22, 32, 3, 849, DateTimeKind.Local).AddTicks(4594));
 
                     b.Property<int>("TotalPrice")
                         .HasColumnType("integer");
@@ -170,12 +170,30 @@ namespace Infrastructure.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Salt")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Id")
                         .IsUnique();
 
-                    b.ToTable("User");
+                    b.ToTable("users");
                 });
 
             modelBuilder.Entity("Domain.Models.ItemOrder", b =>

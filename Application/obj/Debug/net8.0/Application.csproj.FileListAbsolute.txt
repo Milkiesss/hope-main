@@ -33,3 +33,4 @@ C:\Users\annap\OneDrive\Документы\texn\hope-main\Application\obj\Debug\
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Application\obj\Debug\net8.0\Application.pdb
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Application\obj\Debug\net8.0\Application.genruntimeconfig.cache
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Application\obj\Debug\net8.0\ref\Application.dll
+C:\Users\annap\OneDrive\Документы\texn\hope-main\Application\obj\Debug\net8.0\Application.sourcelink.json
