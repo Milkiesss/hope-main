@@ -11,5 +11,6 @@ namespace Application.DTOs.OrderDto
     {
         public Guid UserId { get; set; }
         public ICollection<BaseItemOrderDto> items { get; set; }
+
     }
 }

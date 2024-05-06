@@ -1,15 +1,10 @@
-﻿using Application.DTOs.CategoryDto.Responce;
-using Application.DTOs.OrderDto.Request;
+﻿using Application.DTOs.OrderDto.Request;
 using Application.DTOs.OrderDto.Responce;
+using Application.DTOs.ProductDto.Responce;
 using Application.Interfaces.IRepository;
 using Application.Interfaces.IServices;
 using AutoMapper;
 using Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Services
 {
@@ -29,24 +24,28 @@ namespace Application.Services
             return _mapper.Map<OrderCreateResponce>(request);
         }
 
-        public Task<bool> DeleteAsync(Guid id, CancellationToken token)
+        public async Task<bool> DeleteAsync(Guid id, CancellationToken token)
         {
-            throw new NotImplementedException();
+            return await _rep.DeleteAsync(id, token);
         }
 
-        public Task<ICollection<OrderGetAllResponce>> GetAllAsync(CancellationToken token)
+        public async Task<ICollection<OrderGetAllResponce>> GetAllAsync(CancellationToken token)
         {
-            throw new NotImplementedException();
+            var result = await _rep.GetAllAsync(token);
+            return _mapper.Map<ICollection<OrderGetAllResponce>>(result);
         }
 
-        public Task<OrderGetByIdResponce> GetByIdAsync(Guid id, CancellationToken token)
+        public async Task<OrderGetByIdResponce> GetByIdAsync(Guid id, CancellationToken token)
         {
-            throw new NotImplementedException();
+            var result = await _rep.GetByIdAsync(id, token);
+            return _mapper.Map<OrderGetByIdResponce>(result);
         }
 
-        public Task<OrderUpdateResponce> UpdateAsync(OrderUpdateRequest entity, CancellationToken token)
+        public async Task<OrderUpdateResponce> UpdateAsync(OrderUpdateRequest entity, CancellationToken token)
         {
-            throw new NotImplementedException();
+            var request = _mapper.Map<Order>(entity);
+            await _rep.UpdateAsync(request, token);
+            return _mapper.Map<OrderUpdateResponce>(request);
         }
     }
 }

@@ -21,6 +21,10 @@ namespace Infrastructure.Configuration
                 .HasForeignKey(io => io.ProductId)
                 .IsRequired();
 
+            builder.Property(io => io.Price)
+                .HasColumnType("double precision")
+                .IsRequired();
+
             builder.Property(io => io.Quantity).IsRequired();
         }
     }

@@ -13,6 +13,6 @@ namespace Domain.Models
         public Guid ProductId { get; set; }
         public virtual Product Product { get; set; }
         public int Quantity { get; set; }
-        public int Price { get; set; }
+        public double Price { get; set; }
     }
 }

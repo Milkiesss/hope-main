@@ -13,6 +13,6 @@ namespace Domain.Models
         public virtual User User { get; set; }
         public virtual ICollection<ItemOrder> items { get; set; }
         public DateTime DateOrder { get; set; }
-        public int TotalPrice { get; set; }
+        public double TotalPrice { get; set; }
     }
 }

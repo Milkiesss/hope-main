@@ -22,6 +22,10 @@ namespace Infrastructure.Configuration
                 .IsRequired() 
                 .OnDelete(DeleteBehavior.Cascade);
 
+            builder.Property(p => p.TotalPrice)
+                .HasColumnType("double precision")
+                .IsRequired();
+
             builder.HasMany(c => c.items)
                .WithOne(io => io.order)
                .HasForeignKey(io => io.OrderId)

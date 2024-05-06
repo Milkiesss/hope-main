@@ -13,7 +13,7 @@ namespace Application.Mapping
         public ProductMapProfile()
         {
             CreateMap<Product, ProductCreateResponce>()
-                .ForMember(dest => dest.categoryDto, opt => opt.MapFrom(src => new BaseCategoryDto
+                .ForMember(dest => dest.categoryDto, opt => opt.MapFrom(src => new BaseCategoryDto//проверить работате лли без этого
                 {
                     СategoryName = src.Category.CategoryName
                 }))
@@ -62,9 +62,9 @@ namespace Application.Mapping
                     Guid.NewGuid(),
                     dto.Name,
                     dto.UnitOfMeasure,
-                    dto.Quantity,
                     dto.Available,
                     dto.ExpiryDate,
+                    dto.Price,
                     dto.CategoryId,
                     dto.SupplierId
                 ));
@@ -75,9 +75,9 @@ namespace Application.Mapping
                     dto.Id,
                     dto.Name,
                     dto.UnitOfMeasure,
-                    dto.Quantity,
                     dto.Available,
                     dto.ExpiryDate,
+                    dto.Price,
                     dto.CategoryId,
                     dto.SupplierId
                 ));

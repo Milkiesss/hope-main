@@ -9,5 +9,6 @@ namespace Application.DTOs.OrderDto.Responce
     public class OrderUpdateResponce : BaseOrderDto
     {
         public Guid Id { get; set; }
+        public double TotalPrice { get; set; }
     }
 }

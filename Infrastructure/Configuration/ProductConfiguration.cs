@@ -24,21 +24,21 @@ namespace Infrastructure.Configuration
                 .IsRequired()
                 .HasMaxLength(5);
 
-            builder.Property(p => p.Quantity);
             builder.Property(p => p.Available);
             builder.Property(p => p.ExpiryDate)
                 .HasColumnType("date");
+            builder.Property(p => p.Price)
+                .HasColumnType("double precision")
+                .IsRequired();
 
             builder.HasOne(p => p.Category)
-            .WithMany()
-            .HasForeignKey(p => p.CategoryId)
-            .IsRequired()
-            .OnDelete(DeleteBehavior.SetNull);
+                .WithMany()
+                .HasForeignKey(p => p.CategoryId)
+                .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(p => p.Supplier)
                 .WithMany()
                 .HasForeignKey(p => p.SupplierId)
-                .IsRequired()
                 .OnDelete(DeleteBehavior.SetNull);
         }
     }
