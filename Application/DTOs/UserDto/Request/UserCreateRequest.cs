@@ -6,5 +6,9 @@ using System.Threading.Tasks;
 
 namespace Application.DTOs.UserDto.Request
 {
-    public class UserCreateRequest : BaseUserDto;
+    public class UserCreateRequest : BaseUserDto
+    {
+        public string Password { get; set; }
+    }
+
 }

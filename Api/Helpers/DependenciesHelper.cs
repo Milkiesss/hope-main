@@ -54,6 +54,8 @@ namespace Api.Helpers
             service.AddScoped<IUserRepository, UserRepository>();
             service.AddScoped<IUserService, UserService>();
 
+            service.AddScoped<ICryptographyService, CryptographyService>();
+
             service.AddScoped<IOrderRepository, OrderRepository>();
             service.AddScoped<IOrderService, OrderService>();
 

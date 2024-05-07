@@ -12,7 +12,5 @@ namespace Application.DTOs.ProductDto.Responce
     public class ProductUpdateResponce : BaseProductDto
     {
         public Guid Id { get; set; }
-        public BaseCategoryDto categoryDto { get; set; }
-        public BaseSupplierDto supplierDto { get; set; }
     }
 }

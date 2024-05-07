@@ -9,5 +9,6 @@ namespace Application.DTOs.UserDto.Request
     public class UserUpdateRequest : BaseUserDto
     {
         public Guid Id { get; set; }
+        public string Password { get; set; }
     }
 }

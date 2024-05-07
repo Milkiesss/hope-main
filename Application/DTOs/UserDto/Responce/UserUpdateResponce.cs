@@ -9,5 +9,7 @@ namespace Application.DTOs.UserDto.Responce
     public class UserUpdateResponce : BaseUserDto
     {
         public Guid Id { get; set; }
+        public string passwordHash { get; set; }
+
     }
 }

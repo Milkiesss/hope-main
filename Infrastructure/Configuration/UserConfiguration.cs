@@ -20,9 +20,6 @@ namespace Infrastructure.Configuration
                .IsRequired()
                .HasMaxLength(100);
 
-            builder.Property(u => u.Salt)
-                .IsRequired();
-
             builder.Property(u => u.PasswordHash)
                     .IsRequired();
 

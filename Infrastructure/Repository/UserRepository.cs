@@ -1,11 +1,7 @@
-﻿using Application.Interfaces.IRepository;
+﻿using Application.DTOs.UserDto.Request;
+using Application.Interfaces.IRepository;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Repository
 {
@@ -53,6 +49,12 @@ namespace Infrastructure.Repository
             await _dbcontext.SaveChangesAsync(token);
             return entity;
         }
-        
+        public async Task<User> LoginAsync(User entity, CancellationToken token)
+        {
+            var UserExist = await _dbcontext.users.FirstOrDefaultAsync(u => u.Email == entity.Email);
+            if (UserExist is null)
+                throw new InvalidOperationException("User with specified email does not exist.");
+            return UserExist;
+        }
     }
 }

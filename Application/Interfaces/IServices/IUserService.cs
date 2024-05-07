@@ -1,4 +1,5 @@
-﻿using Application.DTOs.UserDto.Request;
+﻿using Application.DTOs.UserDto;
+using Application.DTOs.UserDto.Request;
 using Application.DTOs.UserDto.Responce;
 
 
@@ -11,5 +12,6 @@ namespace Application.Interfaces.IServices
         public Task<bool> DeleteAsync(Guid id, CancellationToken token);
         public Task<UserGetByIdResponce> GetByIdAsync(Guid id, CancellationToken token);
         public Task<ICollection<UserGetAllResponce>> GetAllAsync(CancellationToken token);
+        public Task<Guid> LoginAsync(UserLoginRequest entity,CancellationToken token);
     }
 }

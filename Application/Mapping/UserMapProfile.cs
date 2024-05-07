@@ -1,5 +1,6 @@
 ﻿using Application.DTOs.CategoryDto.Request;
 using Application.DTOs.CategoryDto.Responce;
+using Application.DTOs.UserDto;
 using Application.DTOs.UserDto.Request;
 using Application.DTOs.UserDto.Responce;
 using AutoMapper;
@@ -16,6 +17,7 @@ namespace Application.Mapping
     {
         public UserMapProfile()
         {
+            CreateMap<Order, OrderHistoryDto>();
             CreateMap<User, UserGetAllResponce>();
 
             CreateMap<User, UserGetByIdResponce>();
@@ -24,13 +26,14 @@ namespace Application.Mapping
 
             CreateMap<User, UserUpdateResponce>();
 
+            CreateMap<UserLoginRequest, User>();
+
             CreateMap<UserCreateRequest, User>()
                 .ConstructUsing(dto => new User
                 (
                     Guid.NewGuid(),
                     dto.Email,
-                    dto.Salt,
-                    dto.PasswordHash,
+                    dto.Password,
                     dto.FullName,
                     dto.Address
                 ));
@@ -40,8 +43,7 @@ namespace Application.Mapping
                 (
                     dto.Id,
                     dto.Email,
-                    dto.Salt,
-                    dto.PasswordHash,
+                    dto.Password,
                     dto.FullName,
                     dto.Address
                 ));

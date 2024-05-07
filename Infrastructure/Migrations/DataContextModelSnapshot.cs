@@ -74,7 +74,7 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("DateOrder")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateTime(2024, 5, 6, 21, 7, 25, 805, DateTimeKind.Local).AddTicks(1962));
+                        .HasDefaultValue(new DateTime(2024, 5, 8, 0, 34, 57, 982, DateTimeKind.Local).AddTicks(4878));
 
                     b.Property<double>("TotalPrice")
                         .HasColumnType("double precision");
@@ -181,10 +181,6 @@ namespace Infrastructure.Migrations
                         .HasColumnType("character varying(100)");
 
                     b.Property<string>("PasswordHash")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Salt")
                         .IsRequired()
                         .HasColumnType("text");
 
