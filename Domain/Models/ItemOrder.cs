@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Domain.Validation.Validators;
+using Domain.Validators;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +16,13 @@ namespace Domain.Models
         public virtual Product Product { get; set; }
         public int Quantity { get; set; }
         public double Price { get; set; }
+
+        public ItemOrder() { }
+        public ItemOrder(int quantity, Guid productId)
+        {
+            Quantity = quantity;
+            ProductId = productId;
+            new ItemOrderValidator(nameof(ItemOrder)).ValidateWithErrors(this);
+        }
     }
 }

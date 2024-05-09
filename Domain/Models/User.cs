@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Domain.Validation.Validators;
+using Domain.Validators;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -22,6 +24,7 @@ namespace Domain.Models
             PasswordHash = passwordHash;
             FullName = fullName;
             Address = address;
+            new UserValidator(nameof(User)).ValidateWithErrors(this);
         }
     }
 }

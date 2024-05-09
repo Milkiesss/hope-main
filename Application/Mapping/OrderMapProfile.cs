@@ -19,21 +19,30 @@ namespace Application.Mapping
             CreateMap<ItemOrder, BaseItemOrderDto>();
 
             CreateMap<OrderCreateRequest, Order>();
-                //.ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()))
-                //.ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
-                //.ForMember(dest => dest.items, opt => opt.MapFrom(Src => Src.items));
+
+            //.ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()))
+            //.ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
+            //.ForMember(dest => dest.items, opt => opt.MapFrom(Src => Src.items));
 
 
             CreateMap<OrderUpdateRequest, Order>();
-                //.ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()))
-                //.ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
-                //.ForMember(dest => dest.items, opt => opt.MapFrom(Src => Src.items));
 
-            CreateMap<Order, OrderGetAllResponce>();
-            CreateMap<Order, OrderGetByIdResponce>();
 
-            CreateMap<Order, OrderCreateResponce>();
-            CreateMap<Order, OrderUpdateResponce>();
+            //.ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()))
+            //.ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
+            //.ForMember(dest => dest.items, opt => opt.MapFrom(Src => Src.items));
+
+            CreateMap<Order, OrderGetAllResponce>()
+                .ForMember(dest => dest.items, opt => opt.MapFrom(Src => Src.items));
+
+            CreateMap<Order, OrderGetByIdResponce>()
+                .ForMember(dest => dest.items, opt => opt.MapFrom(Src => Src.items));
+
+
+            CreateMap<Order, OrderCreateResponce>()
+                 .ForMember(dest => dest.items, opt => opt.MapFrom(Src => Src.items));
+            CreateMap<Order, OrderUpdateResponce>()
+                 .ForMember(dest => dest.items, opt => opt.MapFrom(Src => Src.items));
 
         }
     }

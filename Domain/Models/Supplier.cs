@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Domain.Validation.Validators;
+using Domain.Validators;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,11 +17,12 @@ namespace Domain.Models
             SetId(id);
             CompanyName = companyName; 
             ContactInfo =contactInfo;
+            new SupplierValidator(nameof(Supplier)).ValidateWithErrors(this);
         }
         public Supplier(){}
-        public Supplier(Guid id) 
-        {
-            SetId(id);
-        }
+        //public Supplier(Guid id) 
+        //{
+        //    SetId(id);
+        //}
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace Domain.Models
+﻿using Domain.Validation.Validators;
+using Domain.Validators;
+
+namespace Domain.Models
 {
     public class Product : BaseEntity
     {
@@ -11,6 +14,7 @@
         public virtual Category Category { get; set; }
         public Guid SupplierId { get; set; }
         public virtual Supplier Supplier { get; set; }
+        public Product() { }
         public Product(Guid Id,string name, string unitOfMeasure, bool available, DateTime expiryDate,double price, Guid categoryId, Guid supplierId)
         {
             SetId(Id);
@@ -21,6 +25,7 @@
             Price = price;
             CategoryId = categoryId;
             SupplierId = supplierId;
+            new ProductValidator(nameof(Product)).ValidateWithErrors(this);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Domain.Validation.Validators;
+using Domain.Validators;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -14,5 +16,11 @@ namespace Domain.Models
         public virtual ICollection<ItemOrder> items { get; set; }
         public DateTime DateOrder { get; set; }
         public double TotalPrice { get; set; }
+        public Order() { }
+        public Order(Guid userId)
+        {
+            UserId = userId;
+            new OrderValidator(nameof(Order)).ValidateWithErrors(this);
+        }
     }
 }

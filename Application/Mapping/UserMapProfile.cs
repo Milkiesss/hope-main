@@ -18,9 +18,11 @@ namespace Application.Mapping
         public UserMapProfile()
         {
             CreateMap<Order, OrderHistoryDto>();
-            CreateMap<User, UserGetAllResponce>();
+            CreateMap<User, UserGetAllResponce>()
+                .ForMember(dest => dest.orders, opt => opt.MapFrom(Src => Src.OrderHistory));
 
-            CreateMap<User, UserGetByIdResponce>();
+            CreateMap<User, UserGetByIdResponce>()
+                .ForMember(dest => dest.orders, opt => opt.MapFrom(Src => Src.OrderHistory));
 
             CreateMap<User, UserCreateResponce>();
 

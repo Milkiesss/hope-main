@@ -1,5 +1,8 @@
 ﻿
 
+using Domain.Validation.Validators;
+using Domain.Validators;
+
 namespace Domain.Models
 {
     public class Category : BaseEntity
@@ -8,7 +11,8 @@ namespace Domain.Models
         public Category(Guid id, string categoryName)
         {
             SetId(id);
-            CategoryName = categoryName;
+            CategoryName =categoryName;
+            new CategoryValidator(nameof(Category)).ValidateWithErrors(this);
         }
         public Category() {}
     }

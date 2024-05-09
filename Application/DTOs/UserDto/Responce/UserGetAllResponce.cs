@@ -12,6 +12,6 @@ namespace Application.DTOs.UserDto.Responce
     {
         public Guid Id { get; set; }
         public string passwordHash { get; set; }
-        public ICollection<OrderCreateResponce> orders { get; set; }
+        public ICollection<OrderHistoryDto> orders { get; set; }
     }
 }
