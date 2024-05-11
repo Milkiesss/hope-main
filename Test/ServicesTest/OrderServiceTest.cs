@@ -40,7 +40,6 @@ namespace Test.ServicesTest
             await TestGetById();
             await TestUpdate();
             await TestDelete();
-
         }
         public async Task TestCreate()
         {
@@ -83,6 +82,8 @@ namespace Test.ServicesTest
         }
         private async Task TestUpdate()
         {
+            new ProductServiceTest().TestDelete().GetAwaiter();
+            new ProductServiceTest().TestCreate().GetAwaiter();
             Console.WriteLine("Тестирование метода Update:");
             var request = new OrderUpdateRequest
             {

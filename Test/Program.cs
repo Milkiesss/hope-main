@@ -45,6 +45,10 @@ namespace Test
                             goto c;
                         case "5":
                             new OrderServiceTest().StartTest().GetAwaiter().GetResult();
+                            new ProductServiceTest().TestDelete().GetAwaiter().GetResult();
+                            new CategoryServiceTest().TestDelete().GetAwaiter().GetResult();
+                            new SupplierServiceTest().TestDelete().GetAwaiter().GetResult();
+                            new UserServiceTest().TestDelete().GetAwaiter().GetResult();
                             goto c;
                         case "6":
                             return;
@@ -59,6 +63,7 @@ namespace Test
         }
         private static void Initialize(DataContext _db)
         {
+            _db.Database.EnsureDeleted();
             _db.Database.EnsureCreated();
             var Supplier = new Supplier
             { 

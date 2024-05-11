@@ -34,9 +34,8 @@ namespace Test.ServicesTest
             await TestCreate();
             await TestGetLIst();
             await TestGetById();
-            await TestUpdate();
-            await TestDelete();
             await TestLogin();
+            await TestUpdate();
         }
 
         private async Task TestCreate()
@@ -55,7 +54,7 @@ namespace Test.ServicesTest
 
             _UserId = responce.Id;
             _Email = responce.Email;
-            _Password = responce.passwordHash;
+            _Password = "abc123";
 
             Console.WriteLine(responce is null ? "Error Create" + responce : "User Created" + responce.Id);
         }
@@ -85,7 +84,7 @@ namespace Test.ServicesTest
             };
             var responce = await _serv.LoginAsync(requset, CancellationToken.None);
 
-            Console.WriteLine(responce is Guid ? "Error Login" + responce : "Login Success");
+            Console.WriteLine(responce is Guid ? "Login Success" : "Error Login" + responce);
 
         }
         private async Task TestUpdate()
@@ -103,7 +102,7 @@ namespace Test.ServicesTest
 
             Console.WriteLine(responce is null ? "Error Update" + responce : "Update Success");
         }
-        private async Task TestDelete()
+        public async Task TestDelete()
         {
             Console.WriteLine("Тестирование метода Delete:");
 

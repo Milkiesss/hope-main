@@ -16,12 +16,13 @@ namespace Infrastructure.Repository
         {
             await _dbcontext.categories.AddAsync(entity, token);
             await _dbcontext.SaveChangesAsync(token);
+            _dbcontext.Entry(entity).State = EntityState.Detached;
             return entity;
         }
 
         public async Task<bool> DeleteAsync(Guid id, CancellationToken token)
         {
-            var result = await _dbcontext.categories.FirstOrDefaultAsync(c => c.Id == id, token);
+            var result = await _dbcontext.categories.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id, token);
             if (result == null)
                 return false;
 
@@ -32,12 +33,12 @@ namespace Infrastructure.Repository
 
         public async Task<ICollection<Category>> GetAllAsync(CancellationToken token)
         {
-            return await _dbcontext.categories.ToListAsync();
+            return await _dbcontext.categories.AsNoTracking().ToListAsync();
         }
 
         public async Task<Category> GetByIdAsync(Guid id, CancellationToken token)
         {
-            var result = await _dbcontext.categories.FirstOrDefaultAsync(c => c.Id == id, token);
+            var result = await _dbcontext.categories.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id, token);
             if (result == null)
                 throw new KeyNotFoundException();
             return result;
@@ -45,8 +46,9 @@ namespace Infrastructure.Repository
 
         public async Task<Category> UpdateAsync(Category entity, CancellationToken token)
         {
-            _dbcontext.Update(entity);
+            _dbcontext.categories.Update(entity);
             await _dbcontext.SaveChangesAsync(token);
+            _dbcontext.Entry(entity).State = EntityState.Detached;
             return entity;
 
         }

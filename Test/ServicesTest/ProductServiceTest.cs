@@ -15,6 +15,7 @@ namespace Test.ServicesTest
         private readonly DataFixture _db;
         private readonly IMapper _mapper;
         public static Guid _ProductId;
+
         public ProductServiceTest()
         {
             _db = new DataFixture();
@@ -33,7 +34,6 @@ namespace Test.ServicesTest
             await TestGetLIst();
             await TestGetById();
             await TestUpdate();
-            await TestDelete();
         }
         public async Task TestCreate()
         {
@@ -91,7 +91,7 @@ namespace Test.ServicesTest
             Console.WriteLine(responce is null ? "Error Update" + responce : "Update Success");
         }
 
-        private async Task TestDelete()
+        public async Task TestDelete()
         {
             Console.WriteLine("Тестирование метода Delete:");
 

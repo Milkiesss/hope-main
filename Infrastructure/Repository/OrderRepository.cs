@@ -22,6 +22,8 @@ namespace Infrastructure.Repository
             await CalculatePrice(entity);
             await _dbcontext.orders.AddAsync(entity, token);
             await _dbcontext.SaveChangesAsync(token);
+
+            _dbcontext.Entry(entity).State = EntityState.Detached;
             return entity;
         }
         private async Task<Order> CalculatePrice(Order entity)
@@ -44,7 +46,7 @@ namespace Infrastructure.Repository
         }
         public async Task<bool> DeleteAsync(Guid id, CancellationToken token)
         {
-            var result = await _dbcontext.orders.FirstOrDefaultAsync(c => c.Id == id, token);
+            var result = await _dbcontext.orders.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id, token);
             if (result == null)
                 return false;
 
@@ -55,12 +57,12 @@ namespace Infrastructure.Repository
 
         public async Task<ICollection<Order>> GetAllAsync(CancellationToken token)
         {
-            return await _dbcontext.orders.ToListAsync();
+            return await _dbcontext.orders.AsNoTracking().ToListAsync();
         }
 
         public async Task<Order> GetByIdAsync(Guid id, CancellationToken token)
         {
-            var result = await _dbcontext.orders.FirstOrDefaultAsync(c => c.Id == id, token);
+            var result = await _dbcontext.orders.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id, token);
             if (result == null)
                 throw new KeyNotFoundException();
             return result;
@@ -70,6 +72,7 @@ namespace Infrastructure.Repository
         {
             _dbcontext.orders.Update(entity);
             await _dbcontext.SaveChangesAsync(token);
+            _dbcontext.Entry(entity).State = EntityState.Detached;
             return entity;
         }
     }

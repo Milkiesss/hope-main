@@ -33,7 +33,6 @@ namespace Test.ServicesTest
             await TestGetById();
             await TestGetLIst();
             await TestUpdate();
-            await TestDelete();
         }
         public async Task TestCreate()
         {
@@ -80,7 +79,7 @@ namespace Test.ServicesTest
             Console.WriteLine(responce is null ? "Error Update" : "Update Success");
         }
 
-        private async Task TestDelete()
+        public async Task TestDelete()
         {
             Console.WriteLine("Тестирование метода Delete:");
 

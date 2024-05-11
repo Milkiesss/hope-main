@@ -16,12 +16,13 @@ namespace Infrastructure.Repository
         {
             await _dbcontext.suppliers.AddAsync(entity);
             await _dbcontext.SaveChangesAsync(token);
+            _dbcontext.Entry(entity).State = EntityState.Detached;
             return entity;
         }
 
         public async Task<bool> DeleteAsync(Guid id, CancellationToken token)
         {
-            var result =await _dbcontext.suppliers.FirstOrDefaultAsync(s => s.Id == id,token);
+            var result =await _dbcontext.suppliers.AsNoTracking().FirstOrDefaultAsync(s => s.Id == id,token);
             if (result == null)
                 return false;
 
@@ -32,12 +33,12 @@ namespace Infrastructure.Repository
 
         public async Task<ICollection<Supplier>> GetAllAsync(CancellationToken token)
         {
-            return await _dbcontext.suppliers.ToListAsync();
+            return await _dbcontext.suppliers.AsNoTracking().ToListAsync();
         }
 
         public async Task<Supplier> GetByIdAsync(Guid id, CancellationToken token)
         {
-            var result = await _dbcontext.suppliers.FirstOrDefaultAsync(s => s.Id == id, token);
+            var result = await _dbcontext.suppliers.AsNoTracking().FirstOrDefaultAsync(s => s.Id == id, token);
             if (result == null)
                 throw new KeyNotFoundException();
             return result;
@@ -47,6 +48,7 @@ namespace Infrastructure.Repository
         {
             _dbcontext.suppliers.Update(entity);
             await _dbcontext.SaveChangesAsync(token);
+            _dbcontext.Entry(entity).State = EntityState.Detached;
             return entity;
         }
     }

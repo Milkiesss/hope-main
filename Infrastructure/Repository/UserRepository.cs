@@ -16,12 +16,13 @@ namespace Infrastructure.Repository
         {
             await _dbcontext.users.AddAsync(entity, token);
             await _dbcontext.SaveChangesAsync(token);
+            _dbcontext.Entry(entity).State = EntityState.Detached;
             return entity;
         }
 
         public async Task<bool> DeleteAsync(Guid id, CancellationToken token)
         {
-            var result = await _dbcontext.users.FirstOrDefaultAsync(c => c.Id == id, token);
+            var result = await _dbcontext.users.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id, token);
             if (result == null)
                 return false;
 
@@ -32,12 +33,12 @@ namespace Infrastructure.Repository
 
         public async Task<ICollection<User>> GetAllAsync(CancellationToken token)
         {
-            return await _dbcontext.users.ToListAsync();
+            return await _dbcontext.users.AsNoTracking().ToListAsync();
         }
 
         public async Task<User> GetByIdAsync(Guid id, CancellationToken token)
         {
-            var result = await _dbcontext.users.FirstOrDefaultAsync(c => c.Id == id, token);
+            var result = await _dbcontext.users.AsNoTracking(). FirstOrDefaultAsync(c => c.Id == id, token);
             if (result == null)
                 throw new KeyNotFoundException();
             return result;
@@ -47,13 +48,16 @@ namespace Infrastructure.Repository
         {
             _dbcontext.users.Update(entity);
             await _dbcontext.SaveChangesAsync(token);
+
+            _dbcontext.Entry(entity).State = EntityState.Detached;
             return entity;
         }
         public async Task<User> LoginAsync(User entity, CancellationToken token)
         {
-            var UserExist = await _dbcontext.users.FirstOrDefaultAsync(u => u.Email == entity.Email);
+            var UserExist = await _dbcontext.users.AsNoTracking().FirstOrDefaultAsync(u => u.Email == entity.Email);
             if (UserExist is null)
                 throw new InvalidOperationException("User with specified email does not exist.");
+
             return UserExist;
         }
     }
