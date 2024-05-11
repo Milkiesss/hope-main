@@ -7,7 +7,6 @@ namespace Application.DTOs.ProductDto
     {
         public string Name { get; set; }
         public string UnitOfMeasure { get; set; }
-        public int Quantity { get; set; }
         public bool Available { get; set; }
         public double Price { get; set; }
         public DateTime ExpiryDate { get; set; }

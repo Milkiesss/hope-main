@@ -45,7 +45,7 @@ namespace Infrastructure.Repository
 
         public async Task<Category> UpdateAsync(Category entity, CancellationToken token)
         {
-            _dbcontext.categories.Update(entity);
+            _dbcontext.Update(entity);
             await _dbcontext.SaveChangesAsync(token);
             return entity;
 
