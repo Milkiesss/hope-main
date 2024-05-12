@@ -4,6 +4,7 @@ using Application.DTOs.ProductDto.Responce;
 using Application.DTOs.SupplierDto;
 using AutoMapper;
 using Domain.Models;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 
 
 namespace Application.Mapping

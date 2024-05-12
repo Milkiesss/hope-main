@@ -48,6 +48,7 @@ namespace Application.Services
 
         public async Task<ProductUpdateResponce> UpdateAsync(ProductUpdateRequest entity, CancellationToken token)
         {
+            var existing = await _rep.GetByIdAsync(entity.Id, token);
             var request = _mapper.Map<Product>(entity);
             await _rep.UpdateAsync(request, token);
             return _mapper.Map<ProductUpdateResponce>(request);

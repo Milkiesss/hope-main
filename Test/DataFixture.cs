@@ -10,7 +10,7 @@ namespace Test
         {
             Context = new DataContext(
                 new DbContextOptionsBuilder<DataContext>()
-                .UseNpgsql(@"User ID=postgres;Password=mysecretpassword;Host=localhost;Port=5432;Database=NewSherif;").Options);
+                .UseNpgsql(@"User ID=postgres;Password=12345;Host=localhost;Port=5432;Database=NewSherif;").Options);
         }
         public DataContext Context { get; set; }
 

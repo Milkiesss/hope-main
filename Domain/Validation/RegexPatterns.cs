@@ -9,7 +9,7 @@ namespace Domain.Validators
 {
     public class RegexPatterns
     {
-        public static readonly Regex Email = new(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
+        public static readonly Regex Email = new(@"^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
 
         public static readonly Regex PhoneNumber = new(@"^\d{10,}$");
 

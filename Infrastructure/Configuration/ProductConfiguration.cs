@@ -18,11 +18,11 @@ namespace Infrastructure.Configuration
 
             builder.Property(p => p.Name)
                 .IsRequired()
-                .HasMaxLength(20);
+                .HasMaxLength(50);
 
             builder.Property(p => p.UnitOfMeasure)
                 .IsRequired()
-                .HasMaxLength(5);
+                .HasMaxLength(50);
 
             builder.Property(p => p.Available);
             builder.Property(p => p.ExpiryDate)
