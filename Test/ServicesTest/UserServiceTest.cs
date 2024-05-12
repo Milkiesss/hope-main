@@ -44,7 +44,7 @@ namespace Test.ServicesTest
 
             var request = new UserCreateRequest
             {
-                Email = "bob.johnson@example.com",
+                Email = "johnson@example.com",
                 FullName = "Bob Johnson",
                 Address = "789 Oak Lane, Metropolis, USA",
                 Password = "abc123"

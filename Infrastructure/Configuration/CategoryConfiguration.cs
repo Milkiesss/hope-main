@@ -16,6 +16,7 @@ namespace Infrastructure.Configuration
         {
             builder.HasKey(c => c.Id);
             builder.HasIndex(c => c.Id).IsUnique();
+
             builder.Property(c => c.CategoryName)
                 .IsRequired()
                 .HasMaxLength(50);

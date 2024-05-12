@@ -12,7 +12,7 @@ namespace Infrastructure.Configuration
             builder.HasKey(io => new { io.OrderId, io.ProductId });
 
             builder.HasOne(io => io.order)
-                .WithMany(c => c.items)// У одного чека может быть много позиций заказа
+                .WithMany(c => c.items)
                 .HasForeignKey(io => io.OrderId)
                 .IsRequired();
 

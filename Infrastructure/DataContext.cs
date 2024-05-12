@@ -18,8 +18,8 @@ namespace Infrastructure
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.ApplyConfiguration(new CategoryConfiguration());
             builder.ApplyConfiguration(new ItemOrderConfiguration());
+            builder.ApplyConfiguration(new CategoryConfiguration());
             builder.ApplyConfiguration(new OrderConfigurarion());
             builder.ApplyConfiguration(new ProductConfiguration());
             builder.ApplyConfiguration(new SupplierConfiguration());

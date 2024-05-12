@@ -74,7 +74,7 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("DateOrder")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("date")
-                        .HasDefaultValue(new DateTime(2024, 5, 12, 22, 24, 26, 695, DateTimeKind.Local).AddTicks(8279));
+                        .HasDefaultValue(new DateTime(2024, 5, 13, 2, 27, 26, 744, DateTimeKind.Local).AddTicks(5042));
 
                     b.Property<double>("TotalPrice")
                         .HasColumnType("double precision");
