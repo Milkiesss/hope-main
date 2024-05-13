@@ -82,8 +82,6 @@ namespace Test.ServicesTest
         }
         private async Task TestUpdate()
         {
-            await new ProductServiceTest().TestDelete();
-            await new ProductServiceTest().TestCreate();
             Console.WriteLine("Тестирование метода Update:");
             var request = new OrderUpdateRequest
             {

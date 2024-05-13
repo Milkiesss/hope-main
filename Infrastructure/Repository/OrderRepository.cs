@@ -67,9 +67,9 @@ namespace Infrastructure.Repository
                 throw new KeyNotFoundException();
             return result;
         }
-
         public async Task<Order> UpdateAsync(Order entity, CancellationToken token)
         {
+            await CalculatePrice(entity);
             _dbcontext.orders.Update(entity);
             await _dbcontext.SaveChangesAsync(token);
             _dbcontext.Entry(entity).State = EntityState.Detached;
