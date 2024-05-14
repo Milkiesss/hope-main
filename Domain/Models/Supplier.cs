@@ -20,9 +20,5 @@ namespace Domain.Models
             new SupplierValidator(nameof(Supplier)).ValidateWithErrors(this);
         }
         public Supplier(){}
-        //public Supplier(Guid id) 
-        //{
-        //    SetId(id);
-        //}
     }
 }

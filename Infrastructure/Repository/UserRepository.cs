@@ -14,6 +14,9 @@ namespace Infrastructure.Repository
         }
         public async Task<User> CreateAsync(User entity, CancellationToken token)
         {
+            var existingEmail = await _dbcontext.users.FirstOrDefaultAsync(u => u.Email == entity.Email);
+            if(existingEmail is not null)
+                throw new InvalidOperationException("User with specified email already exists.");
             await _dbcontext.users.AddAsync(entity, token);
             await _dbcontext.SaveChangesAsync(token);
             _dbcontext.Entry(entity).State = EntityState.Detached;
