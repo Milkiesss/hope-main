@@ -28,7 +28,16 @@ namespace Application.Mapping
                     ContactInfo = src.Supplier.ContactInfo
                 }));
 
-            CreateMap<Product, ProductGetByIdResponce>();
+            CreateMap<Product, ProductGetByIdResponce>()
+                .ForMember(dest => dest.categoryDto, opt => opt.MapFrom(src => new BaseCategoryDto
+                {
+                    СategoryName = src.Category.CategoryName
+                }))
+                .ForMember(dest => dest.supplierDto, opt => opt.MapFrom(src => new BaseSupplierDto
+                {
+                    CompanyName = src.Supplier.CompanyName,
+                    ContactInfo = src.Supplier.ContactInfo
+                }));
 
             CreateMap<ProductCreateRequest, Product>()
                 .ConstructUsing(dto => new Product

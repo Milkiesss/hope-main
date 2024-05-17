@@ -29,7 +29,7 @@ namespace Infrastructure.Repository
         private async Task<Order> CalculatePrice(Order entity)
         {
             var items = entity.items.Select(i => i.ProductId).ToList();
-            var product =  _dbcontext.products.Where(c => items.Contains(c.Id)).ToList();
+            var product = await _dbcontext.products.Where(c => items.Contains(c.Id)).ToListAsync();
 
             var itemsPrice = entity.items.Select(item => new ItemOrder
             {

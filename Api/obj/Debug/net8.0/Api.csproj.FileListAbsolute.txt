@@ -221,7 +221,6 @@ C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\obj\Debug\net8.0\A
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\obj\Debug\net8.0\Api.AssemblyInfoInputs.cache
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\obj\Debug\net8.0\Api.AssemblyInfo.cs
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\obj\Debug\net8.0\Api.csproj.CoreCompileInputs.cache
-C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\obj\Debug\net8.0\Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\obj\Debug\net8.0\Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\annap\OneDrive\Документы\texn\hope-main\Api\obj\Debug\net8.0\staticwebassets.development.json

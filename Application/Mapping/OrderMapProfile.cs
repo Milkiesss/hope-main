@@ -20,17 +20,9 @@ namespace Application.Mapping
 
             CreateMap<OrderCreateRequest, Order>();
 
-            //.ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()))
-            //.ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
-            //.ForMember(dest => dest.items, opt => opt.MapFrom(Src => Src.items));
-
 
             CreateMap<OrderUpdateRequest, Order>();
 
-
-            //.ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()))
-            //.ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
-            //.ForMember(dest => dest.items, opt => opt.MapFrom(Src => Src.items));
 
             CreateMap<Order, OrderGetAllResponce>()
                 .ForMember(dest => dest.items, opt => opt.MapFrom(Src => Src.items));
